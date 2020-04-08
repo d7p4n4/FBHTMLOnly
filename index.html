@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCHxM0wUG13SqWO1-3sz6qH55klT9o63U4",
+    authDomain: "onlyhttp-efac3.firebaseapp.com",
+    databaseURL: "https://onlyhttp-efac3.firebaseio.com",
+    projectId: "onlyhttp-efac3",
+    storageBucket: "onlyhttp-efac3.appspot.com",
+    messagingSenderId: "217834076564",
+    appId: "1:217834076564:web:87be1f703dd42075ccf781",
+    measurementId: "G-E5Z8M1PNK2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  function writeData() {
+      firebase.database().ref("User").set({
+          name : document.getElementById("name").value,
+          age: document.getElementById("age").value
+      });
+  }
+
+  
+</script>
+
+<input type="text" id="name">
+<input type="text" id="age">
+<button onclick="writeData()">Submit</button>
+</body>
+</html>
+
+
